@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 50%;
+            text-align: center;
+        }
+        form {
+            display: grid;
+            grid-template-columns: max-content auto;
+            grid-gap: 10px;
+            text-align: left;
+        }
+        form label {
+            text-align: right;
+            white-space: nowrap;
+        }
+        form input[type="date"],
+        form input[type="text"] {
+            width: 100px;
+        }
+        form button {
+            grid-column: span 2;
+            margin-bottom : 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <form action="/add_expense" method="post">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <label for="amount">Amount (Rs):</label>
+            <input type="text" id="amount" name="amount">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category">
+            <button type="submit">Add Expense</button>
+        </form>
+        <a href="/spending_patterns">View Spending Patterns</a>
+    </div>
+</body>
+</html>
